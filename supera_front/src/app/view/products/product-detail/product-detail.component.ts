@@ -26,4 +26,5 @@ export class ProductDetailComponent implements OnInit {
     alert(this.product.name + " Foi adicionado ao carrinho")
   }
 
+  
 }

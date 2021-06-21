@@ -51,6 +51,9 @@ export class CarrinhoComponent implements OnInit {
     this.pedido.saveOrder(this.order).subscribe((result) => {
       this.returnOrder;
     })
-
+    setTimeout(() => {
+      this.carrinho.itens = []
+      location.reload()
+    }, 2000);
   }
 }
