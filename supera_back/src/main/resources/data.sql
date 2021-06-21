@@ -1,0 +1,11 @@
+create table produto(id INT AUTO_INCREMENT  PRIMARY KEY, name varchar(250) not null, price numeric , score int, image varchar (255));
+
+insert into produto(id, name, price, score, image) VALUES(null, 'Super Mario Odyssey', 197.88,100,'https://www.nintendo.com//content/dam/noa/pt_BR/games/switch/s/super-mario-odyssey-switch/super-mario-odyssey-switch-hero.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Call Of Duty Infinite Warfare', 49.99,80,'https://i.ytimg.com/vi/E2hCLTfKaI4/maxresdefault.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'The Witcher III Wild Hunt', 119.5,250,'https://i.ytimg.com/vi/TwIB-OdXMCY/maxresdefault.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Call Of Duty WWII', 69.69,150,'https://www.callofduty.com/content/dam/atvi/callofduty/wwii/home/Stronghold_Metadata_Image.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Mortal Kombat XL', 71.94,400,'https://s2.glbimg.com/NRWh90CEf0tmWZwllYqy1qdvFls=/850x446/s2.glbimg.com/LCOYdL4UU8pMEmhoakdxHX9OKFY=/695x0/s.glbimg.com/po/tt2/f/original/2016/03/03/mortal-kombat-xl-elenco-trailers-semana.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Shards of Darkness', 79.99,50,'https://meups.com.br/wp-content/uploads/2017/03/Styx-Shards-of-Darkness-Wallpaper-NAT-Games.de_-1280x720.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Terra Média: Sombras de Mordor', 195.39,325,'http://s2.glbimg.com/-l0JwdPi7Gldo6hZRdaMzZJpChI=/0x0:715x367/695x357/s.glbimg.com/po/tt2/f/original/2014/11/14/shadow-of-mordor.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'FIFA 18', 195.39,325,'http://media.contentapi.ea.com/content/www-easports/pt_BR/fifa/ultimate-team/news/2018/getting-started-with-fut-19/_jcr_content/imageShare.img.jpg');
+insert into produto(id, name, price, score, image) VALUES(null,'Horizon Zero Dawn', 115.80,290,'https://cdn-ext.fanatical.com/production/product/1280x720/d5f7dc78-2c2d-4604-90ee-79ca108c01fc.jpeg');

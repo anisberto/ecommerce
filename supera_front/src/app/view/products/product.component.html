@@ -1,0 +1,66 @@
+<div class="container" style="padding-top: 2rem;">
+    <div class="row">
+        <div class="col-12">
+            <form class="row g-3 needs-validation" validate>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip01" class="form-label">Product name</label>
+                    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="product.name" type="text" class="form-control" id="validationTooltip01" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-2 position-relative">
+                    <label for="validationTooltip02" class="form-label">Product Price</label>
+                    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="product.price" type="number" class="form-control" id="validationTooltip02" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-2 position-relative">
+                    <label for="validationTooltip02" class="form-label">Product score</label>
+                    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="product.score" type="number" class="form-control" id="validationTooltip02" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">Product Image Url</label>
+                    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="product.imageUri" type="text" class="form-control" id="validationTooltip02"  required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-3" style="padding-top: 1rem;">
+                    <button class="btn  btn-success" (click)="saveProduct()" type="submit">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-produtos">
+        <hr>
+        <div class="card text-left">
+            <img class="card-img-top" src="holder.js/100px180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title">Produtos</h4>
+                <p class="card-text">Lista de Produtos cadastrados</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col-md-4" *ngFor="let product of products" style="margin-bottom:2%">
+            <div class="card h-100" *ngIf="existeProduct">
+                <img class="card-img-top" src="{{product.imageUri}}" height="50%" width="4%" alt="Card image cap">
+                <div class="card-body">
+                    <h5>{{product.name}} </h5>
+                    <p class="card-text"><strong>R$</strong> {{product.price}}</p>
+                    <p class="card-text"><strong>Score: </strong> {{product.score}}</p>
+                    <div class="col-12">
+                        <a routerLink="/product/{{product.id}}" routerLinkActive="router-link-active"  class="btn btn-sm btn-success float-left">detalhes</a>
+                        <a href="#" class="btn btn-sm btn-warning float-right">alterar</a>
+                        <a href="#" class="btn btn-sm btn-danger float-right">deletar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

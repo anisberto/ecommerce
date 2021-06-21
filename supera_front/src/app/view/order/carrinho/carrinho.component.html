@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
+    <form novalidate>
+      <h1><strong>Sua Compra</strong></h1>
+      <hr />
+      <div *ngIf="carrinho.exibirItens().length; else carrinhoVazio">
+        <div *ngFor="let item of itensCarrinho" class="form-row"
+          style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+          <div class="form-group col-sm-1">
+            <img class="img-iten" src="{{item.img}}" height="100%" width="100%" alt="image cap" style="border: solid 1px rgb(185, 30, 10);">
+          </div>
+          <div class="form-group col-sm-6">
+            {{item.titulo}}
+            <br />
+            Score: {{item.descricao_oferta}}
+          </div>
+          <div>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-link" (click)="diminuir(item)">-</button>
+                {{item.quantidade}}
+                <button type="button" class="btn btn-link" (click)="adicionar(item)">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-sm-3 d-flex justify-content-end">
+            R$ {{item.quantidade * item.valor}}
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col d-flex justify-content-end">
+            <h4>Total dos Produtos: R$ {{carrinho.totalCarrinhoCompras()}}</h4>
+            <hr>
+            <h5>Total Frete: R$ {{totalFrete}}</h5>
+          </div>
+        </div>
+      </div>
+      <ng-template #carrinhoVazio>
+        <div class="form-row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; ">
+          <p><strong>Seu carrinho está vazio! Não perca tempo, aproveite as ofertas.</strong></p>
+        </div>
+        <div class="form-row d-flex justify-content-center"
+          style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+          <button type="button" routerLink="/product" class="btn btn-primary">Products</button>
+        </div>
+      </ng-template>
+      <br />
+      <h5>Dados de entrega</h5>
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="endereco" type="text" class="form-control" placeholder="Endereço" autocomplete="off" [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group col-md-2">
+          <input [(ngModel)]="numero" type="text" class="form-control" placeholder="Número" autocomplete="off" [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group col-md-4">
+          <input [(ngModel)]="complemento" type="text" class="form-control" placeholder="Complemento" [ngModelOptions]="{standalone: true}"
+            autocomplete="off">
+        </div>
+      </div>
+      <hr />
+      <button type="button" (click)="saveOrder()" class="btn btn-success btn-lg">Cofirmar compra</button>
+    </form>
+  </div>
+</div>

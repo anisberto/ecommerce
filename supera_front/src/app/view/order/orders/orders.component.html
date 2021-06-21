@@ -1,0 +1,28 @@
+<div class="container" style="padding-top: 2rem;">
+    <div class="card text-left">
+        <img class="card-img-top" src="holder.js/100px180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Pedidos</h4>
+            <p class="card-text">Lista de Pedidos cadastrados</p>
+        </div>
+    </div><br>
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Nº Pedido</th>
+                <th>Status</th>
+                <th>Total (R$)</th>
+                <th>Frete</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ord of order">
+                <td>{{ord.id}}</td>
+                <td>{{ord.status}}</td>
+                <td>R$ {{ord.total}}</td>
+                <td>R$ {{ord.shipping}}</td>
+                <td>{{ord.address}}</td>
+        </tbody>
+    </table>
+</div>

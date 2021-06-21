@@ -1,0 +1,65 @@
+<div class="container" style="padding-top: 2rem;">
+    <div class="row">
+        <div class="col-12">
+            <form class="row g-3 needs-validation" validate>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip01" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="validationTooltip01" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-2 position-relative">
+                    <label for="validationTooltip02" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="validationTooltip02" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-2 position-relative">
+                    <label for="validationTooltip02" class="form-label">CPF</label>
+                    <input type="number" class="form-control" id="validationTooltip02" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="validationTooltip02" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-3" style="padding-top: 1rem;">
+                    <button class="btn btn-success" type="submit">Save Client</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Alterar</th>
+                <th>Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of products">
+                <td>{{person.name}}</td>
+                <td>{{person.name}}</td>
+                <td>{{person.name }</td>
+                <td>{{person.name }</td>
+                <td class="text-center"><button routerLink="/personUpdate/{{ person.id }}"
+                        class="btn btn-info btn-sm"><span class="glyphicon glyphicon-remove"></span> Alterar</button>
+                </td>
+                <td class="text-center"><button class="btn btn-danger btn-sm"><span
+                            class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
